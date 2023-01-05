@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:homestay_raya/views/screens/mybookingsscreen.dart';
+import 'package:homestay_raya/views/screens/myhomestayscreen.dart';
 import '../../models/user.dart';
 import '../screens/mainscreen.dart';
 import '../screens/profilescreen.dart';
@@ -30,7 +30,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
             ),
           ),
           ListTile(
-            title: const Text('HomeStay'),
+            title: const Text('Explore HomeStay'),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(
@@ -40,14 +40,14 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
             },
           ),
           ListTile(
-            title: const Text('My Bookings'),
+            title: const Text('My HomeStay'),
             onTap: () {
               Navigator.pop(context);
               Navigator.push(
                   context,
                   EnterExitRoute(
                       exitPage: MainScreen(user: widget.user),
-                      enterPage: const MyBookingsScreen()));
+                      enterPage: MyHomestayScreen(user: widget.user)));
             },
           ),
           ListTile(

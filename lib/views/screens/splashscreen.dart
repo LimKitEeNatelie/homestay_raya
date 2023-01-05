@@ -48,6 +48,7 @@ Future<void> autoLogin() async {
         var jsonResponse = json.decode(response.body);
         if (response.statusCode == 200 && jsonResponse['status'] == "success") {
           //var jsonResponse = json.decode(response.body);
+          print(response.statusCode);
           User user = User.fromJson(jsonResponse['data']);
           Timer(
               const Duration(seconds: 3),

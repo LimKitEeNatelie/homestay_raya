@@ -31,11 +31,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
   void _registrationForm() {
     Navigator.push(context,
-        MaterialPageRoute(builder: (content) => const RegistrationScreen()));
+        MaterialPageRoute(builder: (content) => RegistrationScreen(user: widget.user)));
   }
 
   void _loginForm() {
     Navigator.push(
-        context, MaterialPageRoute(builder: (content) => const LoginScreen()));
+        context, MaterialPageRoute(builder: (content) => LoginScreen(user: widget.user)));
   }
 }

@@ -11,7 +11,8 @@ import '../../models/user.dart';
 import 'mainscreen.dart';
 
 class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+  final User user;
+  const LoginScreen({super.key, required this.user});
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -193,7 +194,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _goLogin() {
     Navigator.push(context,
-        MaterialPageRoute(builder: (content) => const RegistrationScreen()));
+        MaterialPageRoute(builder: (content) => RegistrationScreen(user: widget.user)));
   }
 
   void saveremovepref(bool value) async {

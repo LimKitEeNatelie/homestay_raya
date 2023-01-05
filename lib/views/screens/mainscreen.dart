@@ -18,8 +18,8 @@ class _MainScreenState extends State<MainScreen> {
     return WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
-          appBar: AppBar(title: const Text("HomeStay")),
-          body: const Center(child: Text("HomeStay")),
+          appBar: AppBar(title: const Text("Explore HomeStay")),
+          body: const Center(child: Text("Explore HomeStay")),
           drawer:  MainMenuWidget(user:widget.user),
         ));
   }

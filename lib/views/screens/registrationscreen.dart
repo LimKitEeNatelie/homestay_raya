@@ -3,11 +3,13 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:homestay_raya/config.dart';
+import 'package:homestay_raya/models/user.dart';
 import 'package:http/http.dart' as http;
 import 'package:fluttertoast/fluttertoast.dart';
 
 class RegistrationScreen extends StatefulWidget {
-  const RegistrationScreen({super.key});
+ final User user;
+  const RegistrationScreen({super.key, required this.user});
 
   @override
   State<RegistrationScreen> createState() => _RegistrationScreenState();
@@ -175,7 +177,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   }
 
   String? validatePassword(String value) {
-    String pattern = r'^(?=.*?[A‐Z])(?=.*?[a‐z])(?=.*?[0‐9]).{6,}$';
+    String pattern = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$';
     RegExp regex = RegExp(pattern);
     if (value.isEmpty) {
       return 'Please enter password';
