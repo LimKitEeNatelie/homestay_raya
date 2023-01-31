@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:homestay_raya/views/screens/explorehomestayscreen.dart';
 import 'package:homestay_raya/views/screens/myhomestayscreen.dart';
 import '../../models/user.dart';
-import '../screens/mainscreen.dart';
+import '../screens/explorehomestayscreen.dart';
 import '../screens/profilescreen.dart';
 
 import 'EnterExitRoute.dart';
@@ -26,8 +27,8 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
             accountEmail: Text(widget.user.email.toString()),
             accountName: Text(widget.user.name.toString()),
             currentAccountPicture: const CircleAvatar(
-              radius: 30.0,
-            ),
+              radius: 30.0,  backgroundImage: AssetImage('assets/11.png'),
+           ),
           ),
           ListTile(
             title: const Text('Explore HomeStay'),
@@ -36,7 +37,8 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
               Navigator.push(
                   context,
                   EnterExitRoute(
-                      exitPage: MainScreen(user: widget.user), enterPage: MainScreen(user: widget.user)));
+                      exitPage: ExploreHomestayScreen(user: widget.user), 
+                      enterPage: ExploreHomestayScreen(user: widget.user)));
             },
           ),
           ListTile(
@@ -46,7 +48,7 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
               Navigator.push(
                   context,
                   EnterExitRoute(
-                      exitPage: MainScreen(user: widget.user),
+                      exitPage: ExploreHomestayScreen(user: widget.user),
                       enterPage: MyHomestayScreen(user: widget.user)));
             },
           ),
@@ -57,7 +59,8 @@ class _MainMenuWidgetState extends State<MainMenuWidget> {
               Navigator.push(
                   context,
                   EnterExitRoute(
-                      exitPage: MainScreen(user: widget.user), enterPage: ProfileScreen(user: widget.user)));
+                      exitPage: ExploreHomestayScreen(user: widget.user), 
+                      enterPage: ProfileScreen(user: widget.user)));
             },
           ),
         ],

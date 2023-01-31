@@ -2,10 +2,11 @@ import 'dart:async';
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:homestay_raya/models/user.dart';
+import 'package:homestay_raya/views/screens/myhomestayscreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../config.dart';
 
-import 'mainscreen.dart';
+import 'explorehomestayscreen.dart';
 import 'package:http/http.dart' as http;
 
 class SplashScreen extends StatefulWidget {
@@ -55,7 +56,7 @@ Future<void> autoLogin() async {
               () => Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                      builder: (content) => MainScreen(user: user))));
+                      builder: (content) => ExploreHomestayScreen(user: user))));
         } else {
           User user = User(
               id: "0",
@@ -70,7 +71,7 @@ Future<void> autoLogin() async {
               () => Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                      builder: (content) => MainScreen(user: user))));
+                      builder: (content) => ExploreHomestayScreen(user: user))));
         }
       });
     } else {
@@ -85,7 +86,7 @@ Future<void> autoLogin() async {
       Timer(
           const Duration(seconds: 3),
           () => Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (content) => MainScreen(user: user))));
+              MaterialPageRoute(builder: (content) => ExploreHomestayScreen(user: user))));
     }
   }
 }

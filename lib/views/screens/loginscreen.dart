@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:homestay_raya/views/screens/myhomestayscreen.dart';
 import 'package:homestay_raya/views/screens/registrationscreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -8,7 +9,7 @@ import 'package:http/http.dart' as http;
 
 import '../../config.dart';
 import '../../models/user.dart';
-import 'mainscreen.dart';
+import 'explorehomestayscreen.dart';
 
 class LoginScreen extends StatefulWidget {
   final User user;
@@ -164,7 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
         User user = User.fromJson(jsonResponse['data']);
         print(user.phone);
         Navigator.push(context,
-            MaterialPageRoute(builder: (content) => MainScreen(user: user)));
+            MaterialPageRoute(builder: (content) => ExploreHomestayScreen(user: user)));
       } else {
         Fluttertoast.showToast(
             msg: "Login Failed",
@@ -187,7 +188,7 @@ class _LoginScreenState extends State<LoginScreen> {
     Navigator.push(
         context,
         MaterialPageRoute(
-            builder: (content) => MainScreen(
+            builder: (content) => ExploreHomestayScreen(
                   user: user,
                 )));
   }
